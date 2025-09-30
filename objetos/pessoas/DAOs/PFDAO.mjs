@@ -1,15 +1,15 @@
 // pessoas/DAOs/PFDAO.mjs
 
-import { localStorage } from '../../localStorage.mjs'; 
-import PF from '../PF.js';
+import { localStorage } from './localStorage.mjs';  
+import pf from '../PF.js';  
 
 export default class PFDAO {
 
-  #PF;
+  #pf;
 
   constructor(PF) {
-    if (PF instanceof PF) {
-      this.#PF = PF;
+    if (PF instanceof pf) {
+      this.#pf = PF;
     }
   }
 
@@ -17,7 +17,7 @@ export default class PFDAO {
     let fones = [];
 
     
-    for (let fone of this.#PF.getTelefones()) {
+    for (let fone of this.#pf.getTelefones()) {
       fones.push({
         ddd: fone.getDdd(),
         numero: fone.getNumero(),
@@ -26,12 +26,12 @@ export default class PFDAO {
 
     
     return {
-      nome: this.#PF.getNome(),
-      email: this.#PF.getEmail(),
-      cpf: this.#PF.getCPF(),
+      nome: this.#pf.getNome(),
+      email: this.#pf.getEmail(),
+      cpf: this.#pf.getCPF(),
       endereco: {
-        logradouro: this.#PF.getEndereco().getLogradouro(),
-        cep: this.#PF.getEndereco().getCep(),
+        logradouro: this.#pf.getEndereco().getLogradouro(),
+        cep: this.#pf.getEndereco().getCep(),
       },
       telefone: fones,
       
@@ -40,11 +40,11 @@ export default class PFDAO {
 
   saveJSON() {
     
-    localStorage.setItem("PF", JSON.stringify(this.toJSON()));
+    localStorage.setItem("pf", JSON.stringify(this.toJSON()));
   }
 
   recoveryJSON() {
     
-    return JSON.parse(localStorage.getItem("PF"));
+    return JSON.parse(localStorage.getItem("pf"));
   }
 }
