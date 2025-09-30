@@ -1,10 +1,11 @@
 /// objetos/pessoas/DAOs/AlunoDAO.mjs 
 
-import * as localStorage from './localStorage.mjs'; 
-import Aluno from '../Aluno.js'; 
+import { localStorage } from './localStorage.mjs';  
+import Aluno from '../Aluno.js';        
 
 export default class AlunoDAO {
   
+ 
   #aluno; 
   
   constructor(aluno) {
@@ -27,10 +28,13 @@ export default class AlunoDAO {
       nome: this.#aluno.getNome(),
       email: this.#aluno.getEmail(),
       
+      
       matricula: this.#aluno.getMatricula(), 
       curso: this.#aluno.getCurso(), 
-      disciplina: { 
-        nome: this.#aluno.getDisciplina().getNome() 
+
+
+      curso: { 
+        nome: this.#aluno.getCurso(),
       }, 
       
       endereco: {
@@ -41,13 +45,15 @@ export default class AlunoDAO {
     };
   }
 
+
   saveJSON() {
-    
+
     localStorage.setItem("aluno", JSON.stringify(this.toJSON()));
   }
 
+
   recoveryJSON() {
-   
+
     return JSON.parse(localStorage.getItem("aluno"));
   }
 }
