@@ -30,3 +30,4 @@ console.log('JSON gerado (toJSON):', jsonPF);
 console.log('JSON em string (saveJSON):', JSON.stringify(jsonPF));
 console.log('JSON recuperado (recoveryJSON):', pfdao.recoveryJSON());
 console.log("-------------");
+
