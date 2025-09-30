@@ -1,6 +1,6 @@
 // objetos/usaAlunoDAO.mjs
 
-import Aluno from './pessoas/Aluno.js'; 
+import Aluno from './pessoas/Aluno.js';
 import AlunoDAO from './pessoas/DAOs/AlunoDAO.mjs'; 
 import Endereco from './pessoas/Endereco.js'; 
 import Telefone from './pessoas/Telefone.js';
@@ -34,3 +34,4 @@ console.log('JSON gerado (toJSON):', jsonAluno);
 console.log('\nJSON em string (saveJSON/store):', JSON.stringify(jsonAluno));
 console.log('\nJSON recuperado (recoveryJSON):', alunoDAO.recoveryJSON());
 console.log("---------------------------------");
+
