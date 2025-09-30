@@ -1,24 +1,28 @@
 // objetos/usaAlunoDAO.mjs
 
-import Aluno from './pessoas/Aluno.js';
-import AlunoDAO from './pessoas/DAOs/AlunoDAO.mjs';
-import Endereco from './pessoas/Endereco.js';
+import Aluno from './pessoas/Aluno.js'; 
+import AlunoDAO from './pessoas/DAOs/AlunoDAO.mjs'; 
+import Endereco from './pessoas/Endereco.js'; 
 import Telefone from './pessoas/Telefone.js';
 
 const aluno = new Aluno();
-aluno.setNome('João da Mata');
-aluno.setEmail('joao@aluno.ifb.edu.br');
+
+aluno.setNome('Dantas');
+aluno.setEmail('Dantas@aluno.ifb.edu.br');
 aluno.setMatricula('20231TADS007');
 
 const endAluno = new Endereco();
-endAluno.setLogradouro('Estrada Parque Sul');
-endAluno.setCep('54321-000');
+
+endAluno.setLogradouro('Parque Samamba Norte');
+endAluno.setCep('9293-4030');
 aluno.setEndereco(endAluno);
 
 const foneAluno = new Telefone();
+
 foneAluno.setDdd('61');
-foneAluno.setNumero('91234-5678');
+foneAluno.setNumero('9797-2828');
 aluno.addTelefone(foneAluno);
+
 
 const alunoDAO = new AlunoDAO(aluno);
 
