@@ -3,7 +3,7 @@ const PF = require('./PF');
 
 class Aluno extends PF{
    
-  
+
     #matricula;
     #curso;
     #disciplina; //LEMBRAR DE COLOCAR AS INFORMAÇÕES DE DISCIPLINA.
@@ -47,3 +47,4 @@ class Aluno extends PF{
   }
 
 module.exports = Aluno;
+
