@@ -10,7 +10,7 @@ class Disciplina {
              return false;
     }
   }
-  
+
   getNome() {
     return this.#nome;
   }
@@ -18,4 +18,5 @@ class Disciplina {
 }
 
 module.exports = Disciplina;
+
 
